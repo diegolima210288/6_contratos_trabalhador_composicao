@@ -26,7 +26,6 @@ public class Program {
 		System.out.print("Name: ");
 		String name = sc.nextLine();
 		System.out.print("Level: ");
-		sc.nextLine();
 		String level = sc.nextLine();
 		System.out.print("Base salary: ");
 		double baseSalary = sc.nextDouble();
@@ -43,7 +42,7 @@ public class Program {
 			Date date = sdf.parse(sc.next());
 			System.out.print("Value per hour: ");
 			double valuePerHour = sc.nextDouble();
-			System.out.print("Duration (hours):");
+			System.out.print("Duration (hours): ");
 			int hours = sc.nextInt();
 			
 			HourContract hourContract = new HourContract(date, valuePerHour, hours);
@@ -51,8 +50,18 @@ public class Program {
 		}
 		
 		System.out.println();
-
+		System.out.println("Enter month and year to calculate income (MM/YYYY): ");
+		sc.nextLine();
+		String monthYear = sc.nextLine();
+		//desmenbrando o valor da varival monthYear em mes e ano, para passar o valor para o modulo.
+		int month = Integer.parseInt(monthYear.substring(0, 2));
+		int year = Integer.parseInt(monthYear.substring(3));
 		
+		//apresentação dos dados		
+		System.out.println("Name: " + worker.getName());
+		System.out.println("Department: " + worker.getDepartment());
+		System.out.println("Income for " + monthYear + ": " + worker.income(year, month));
+
 		sc.close();
 
 	}
