@@ -50,7 +50,7 @@ public class Program {
 		}
 		
 		System.out.println();
-		System.out.println("Enter month and year to calculate income (MM/YYYY): ");
+		System.out.print("Enter month and year to calculate income (MM/YYYY): ");
 		sc.nextLine();
 		String monthYear = sc.nextLine();
 		//desmenbrando o valor da varival monthYear em mes e ano, para passar o valor para o modulo.
@@ -59,8 +59,8 @@ public class Program {
 		
 		//apresentação dos dados		
 		System.out.println("Name: " + worker.getName());
-		System.out.println("Department: " + worker.getDepartment());
-		System.out.println("Income for " + monthYear + ": " + worker.income(year, month));
+		System.out.println("Department: " + worker.getDepartment().getName());
+		System.out.println("Income for " + monthYear + ": " + String.format("%.2f", worker.income(year, month)));
 
 		sc.close();
 
